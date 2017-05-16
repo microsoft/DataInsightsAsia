@@ -120,7 +120,7 @@ function Get-CurrentUserOptions
 
 
     # report what user options are currently enabled
-    $userOptions | Where-Object { $PSItem.Value -band $CurrentUserOptions } | Format-Table Name, Description;
+    return $userOptions | Where-Object { $PSItem.Value -band $CurrentUserOptions } | Select-Object Name, Description;
 
 }
 
