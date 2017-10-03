@@ -10,9 +10,33 @@ This project uses [SemVer](http://semver.org/) for versioning. While the followi
 
 * None
 
-### 0.0.0
+### 0.3.0
 
-* Initial push 
+- Added the Scripts
+  - /IO/AutoGrowth.sql
+  - /QueryPerformance/SystemHealthSession.WaitInfo.SQL2016.sql
+
+### 0.2.1
+
+- Script updates
+  - Improved Pipeline support in /Configuration/UserOptions.ps1
+
+### 0.2.1
+
+- Script Updates
+  - Renamed /Export to /ExportAndMigration
+  - Added /ExportAndMigration/README.md
+
+
+### 0.1.0
+
+- Added the Scripts
+  - /Export/ExportAgentJobs.ps1
+  - /IO/IOFileStats.sql
+  - /IndexAndStatistics/StatisticsLastUpdated.sql
+  - /QueryPerformance/ParallelQueries.sql
+  - /QueryPerformance/Recompiles.sql
+  - /QueryPerformance/WaitingTasks.byPaulRandal.sql
 
 # Contributing
 
