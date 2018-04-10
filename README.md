@@ -10,6 +10,16 @@ This project uses [SemVer](http://semver.org/) for versioning. While the followi
 
 * None
 
+### 0.4.0
+
+- Added
+  - /Scripts/AlwaysOn/AutomaticSeeding.sql
+  - /Scripts/PolicyBasedManagement/PolicyFunctions.ps1
+
+- Updates to
+  - /Scripts/ExportAndMigration/ExportAgentJobs.ps1
+  - /Scripts/VLFs/VLFsReport.sql
+
 ### 0.3.0
 
 - Added the Scripts

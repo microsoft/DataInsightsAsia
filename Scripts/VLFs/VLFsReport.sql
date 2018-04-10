@@ -7,8 +7,8 @@ SQL Version: SQL 2005 and greater
 SQLRAP:		Performance \ SQL Performance
 
 Changes:
-Who		When		What
-
+Who			When		What
+MLavery		06/02/2018	Minor logic changes
 
 Disclaimer:
 This Sample Code is provided for the purpose of illustration only and is not intended to be 
@@ -20,14 +20,15 @@ distribute the object code form of the Sample Code, provided that You agree: (i)
 Our name, logo, or trademarks to market Your software product in which the Sample Code is 
 embedded; (ii) to include a valid copyright notice on Your software product in which the 
 Sample Code is embedded; and (iii) to indemnify, hold harmless, and defend Us and Our 
-suppliers from and against any claims or lawsuits, including attorneys’ fees, that arise 
+suppliers from and against any claims or lawsuits, including attorneysï¿½ fees, that arise 
 or result from the use or distribution of the Sample Code.
 *********************************************************************************************/
 
 
 SET NOCOUNT ON;
 
-/* declare variables required */
+-- declare variables required
+DECLARE @majorVer SMALLINT, @minorVer SMALLINT, @build SMALLINT
 DECLARE @DatabaseId INT;
 DECLARE @TSQL varchar(MAX);
 DECLARE cur_DBs CURSOR FOR
@@ -35,7 +36,10 @@ DECLARE cur_DBs CURSOR FOR
 OPEN cur_DBs;
 FETCH NEXT FROM cur_DBs INTO @DatabaseId
 
---These table variables will be used to store the data
+-- Get the version
+SELECT @majorVer = (@@microsoftversion / 0x1000000) & 0xff, @minorVer = (@@microsoftversion / 0x10000) & 0xff, @build = @@microsoftversion & 0xffff
+
+-- These table variables will be used to store the data
 DECLARE @tblAllDBs Table (DBName sysname
 	, FileId INT
 	, FileSize BIGINT
@@ -45,7 +49,7 @@ DECLARE @tblAllDBs Table (DBName sysname
 	, Parity INT
 	, CreateLSN NUMERIC(25,0)
 )
-IF  '11' = substring(convert(char(12),serverproperty('productversion')), 1, 2)
+IF ( @majorVer >= 11 )
 BEGIN
 	DECLARE @tblVLFs2012 Table (RecoveryUnitId BIGINT
 		, FileId INT
@@ -77,7 +81,7 @@ BEGIN
 	PRINT 'DB: ' + CONVERT(varchar(200), DB_NAME(@DatabaseId));
 	SET @TSQL = 'dbcc loginfo('+CONVERT(varchar(12), @DatabaseId)+');';
 
-	IF  '11' = substring(convert(char(12),serverproperty('productversion')), 1, 2)
+	IF ( @majorVer >= 11 )
 	BEGIN
 		DELETE FROM @tblVLFs2012;
 		INSERT INTO @tblVLFs2012
