@@ -1,7 +1,9 @@
 # Policy Based Management scripts
 A collection of scripts for using and managing Policy Based Management of SQL Server
 
-Recommend considering the [Enterprise Policy Management Framework](http://aka.ms/epmframework) if you are keen on Policy Based Management.
+For recommendations on monitoring and enforcing best practices using policies see [https://docs.microsoft.com/en-us/sql/relational-databases/policy-based-management/monitor-and-enforce-best-practices-by-using-policy-based-management](https://docs.microsoft.com/en-us/sql/relational-databases/policy-based-management/monitor-and-enforce-best-practices-by-using-policy-based-management).
+
+To extend the capabilties and reporting available with Policy Based Management, particularly in an enterprise, highly recommend considering the [Enterprise Policy Management Framework](http://aka.ms/epmframework).
 
 ## PolicyFunctions.ps1
 Contains a few functions for managing and interacting with Policies.
