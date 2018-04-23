@@ -8,7 +8,11 @@ This project uses [SemVer](http://semver.org/) for versioning. While the followi
 
 ### Unreleased
 
-* None
+- Added
+  - /Scripts/BackupRestore/NoRecentBackups.sql
+  - /Scripts/QueryPerformance/SystemHealthSession.QueryPlans.sql
+  - /Scripts/QueryPerformance/ExtendedEvents_Get_DeadLocksFromSystemHealth_SingleServer.sql
+
 
 ### 0.4.0
 
