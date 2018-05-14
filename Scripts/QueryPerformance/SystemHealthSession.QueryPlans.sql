@@ -58,27 +58,22 @@ BEGIN
 END
 
 
-SELECT
-    n.query('.') AS event_data
-INTO 
-       #tmp
-FROM 
-       @target_data.nodes('RingBufferTarget/event') AS q(n);
+SELECT n.query('.') AS event_data
+INTO #tmp
+FROM @target_data.nodes('RingBufferTarget/event') AS q(n);
 
 SELECT 
-      t.event_data.value(N'(/event/@timestamp)[1]', N'datetime') AS event_time
-       , whole_xml   = t.event_data.query('.')
-FROM 
-       #tmp AS t;
+    t.event_data.value(N'(/event/@timestamp)[1]', N'datetime') AS event_time
+    , whole_xml   = t.event_data.query('.')
+FROM #tmp AS t;
 
 SELECT 
-      t.event_data.value(N'(/event/@timestamp)[1]', N'datetime') AS event_time
-       , t.event_data.value('(/event/data[@name="duration"]/value)[1]', 'bigint') as duration
-       , t.event_data.value(N'(/event/action[@name="sql_text"]/value)[1]', N'nvarchar(max)') AS sql_text
-       , z.xml_fragment.query('.') AS xml_plan
-FROM 
-       #tmp AS t
-       CROSS APPLY t.event_data.nodes(N'/event/data[@name="showplan_xml"]/value/*') AS z(xml_fragment);
+    t.event_data.value(N'(/event/@timestamp)[1]', N'datetime') AS event_time
+    , t.event_data.value('(/event/data[@name="duration"]/value)[1]', 'bigint') as duration
+    , t.event_data.value(N'(/event/action[@name="sql_text"]/value)[1]', N'nvarchar(max)') AS sql_text
+    , z.xml_fragment.query('.') AS xml_plan
+FROM #tmp AS t
+CROSS APPLY t.event_data.nodes(N'/event/data[@name="showplan_xml"]/value/*') AS z(xml_fragment);
 
 GO
 
