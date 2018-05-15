@@ -12,6 +12,7 @@ This project uses [SemVer](http://semver.org/) for versioning. While the followi
   - /Scripts/BackupRestore/NoRecentBackups.sql
   - /Scripts/QueryPerformance/SystemHealthSession.QueryPlans.sql
   - /Scripts/QueryPerformance/ExtendedEvents_Get_DeadLocksFromSystemHealth_SingleServer.sql
+  - /Scripts/VLFs/grow_transaction_log_by_desired_vlf_size.sql
 
 
 ### 0.4.0
