@@ -6,7 +6,7 @@ All code is provided "as is" as per the [MIT License](https://github.com/Microso
 
 ## Releases
 
-This project uses [SemVer](http://semver.org/) for versioning. While the following is an overview of the offical releases, for the detailed changes, see the [tags on this repository](https://github.com/Microsoft/DataInsightsAsia/tags). 
+This project uses [SemVer](http://semver.org/) for versioning. While the following is an overview of the offical releases, for the detailed changes, see the [tags on this repository](https://github.com/Microsoft/DataInsightsAsia/tags).
 
 ### 0.5.0
 
@@ -52,7 +52,7 @@ This project uses [SemVer](http://semver.org/) for versioning. While the followi
 - Script updates
   - Improved Pipeline support in /Configuration/UserOptions.ps1
 
-### 0.2.1
+### 0.2.0
 
 - Script Updates
   - Renamed /Export to /ExportAndMigration
