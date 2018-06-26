@@ -1,15 +1,17 @@
-/*
-    Author:        Matt Lavery
-    Date:          03/02/2017
-    Purpose:       Script to restore the Log Shipped databases during a failover
-    Major Version: 0.1.0 
-
-    History
-    When        Version     Who         What
-    -----------------------------------------------------------------
-    03/02/2017  0.1.0       Mlavery     Initial Coding
-    -----------------------------------------------------------------
-*/
+--
+--  Author:        Matt Lavery
+--  Date:          03/02/2017
+--  Purpose:       Script to restore the Log Shipped databases during a failover
+-- 
+--  Version:       0.1.0 
+--  Disclaimer:    This script is provided "as is" in accordance with the projects license
+--
+--  History
+--  When        Version     Who         What
+--  -----------------------------------------------------------------
+--  03/02/2017  0.1.1       mlavery     Initial Coding
+--  -----------------------------------------------------------------
+--
 
 -- Set this to 1 if you want the SQL statements to be run
 DECLARE @ExecuteSQL BIT = 0;

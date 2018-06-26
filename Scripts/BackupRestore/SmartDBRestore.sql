@@ -1,15 +1,17 @@
-/*
-    Author:        Matt Lavery
-    Date:          25/05/2016
-    Purpose:       Provides a smart / automated approach to database restores
-    Major Version: 0.1.0 
-
-    History
-    When        Version     Who         What
-    -----------------------------------------------------------------
-    25/05/2016  0.1.0       Mlavery     Dynamically detect the database files and fix orphaned users
-    -----------------------------------------------------------------
-*/
+--
+--  Author:        Matt Lavery
+--  Date:          25/05/2016
+--  Purpose:       Provides a smart / automated approach to database restores
+-- 
+--  Version:       0.1.0 
+--  Disclaimer:    This script is provided "as is" in accordance with the projects license
+--
+--  History
+--  When        Version     Who         What
+--  -----------------------------------------------------------------
+--  25/05/2016  0.1.1       mlavery     Dynamically detect the database files and fix orphaned users
+--  -----------------------------------------------------------------
+--
 
 -- Set this to 1 if you want the SQL statements to be run
 DECLARE @ExecuteSQL BIT = 0;
