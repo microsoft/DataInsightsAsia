@@ -1,28 +1,20 @@
-/*********************************************************************************************
-Written By: Ben Harding
-Date:		14/05/2018
-Purpose:	Will produce TSQL commands to grow a transaction log to a desired size with  
-			a desired VLF size. 
-            Supports change to VLF creation logic introduced in SQL Server 2014.
-SQL Version: SQL 2005 and greater
-SQLRAP:		
-
-Changes:
-Who			When		What
-
-Disclaimer:
-This Sample Code is provided for the purpose of illustration only and is not intended to be 
-used in a production environment.  THIS SAMPLE CODE AND ANY RELATED INFORMATION ARE PROVIDED 
-"AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED 
-TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.  We grant 
-You a nonexclusive, royalty-free right to use and modify the Sample Code and to reproduce and 
-distribute the object code form of the Sample Code, provided that You agree: (i) to not use 
-Our name, logo, or trademarks to market Your software product in which the Sample Code is 
-embedded; (ii) to include a valid copyright notice on Your software product in which the 
-Sample Code is embedded; and (iii) to indemnify, hold harmless, and defend Us and Our 
-suppliers from and against any claims or lawsuits, including attorneys� fees, that arise 
-or result from the use or distribution of the Sample Code.
-*********************************************************************************************/
+--
+--  Author:        Ben Harding
+--  Date:          14/05/2018
+--  Purpose:	   Will produce TSQL commands to grow a transaction log to a desired size with  
+--                 a desired VLF size. 
+--                 Supports change to VLF creation logic introduced in SQL Server 2014.
+--  SQL Version:   SQL 2005 and greater
+-- 
+--  Version:       0.1.0 
+--  Disclaimer:    This script is provided "as is" in accordance with the projects license
+--
+--  History
+--  When        Version     Who         What
+--  -----------------------------------------------------------------
+--  14/05/2018  0.1.0       behardin    Intitial release
+--  -----------------------------------------------------------------
+--
 
 SET NOCOUNT ON
 GO
