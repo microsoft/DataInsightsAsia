@@ -1,7 +1,7 @@
 --
 --  Author:        Matt Lavery
 --  Date:          25/07/2018
---  Purpose:       Disables the session to free up resources
+--  Purpose:       Drop the session when you no longer need it
 --  Reference:     https://docs.microsoft.com/en-us/azure/sql-database/sql-database-xevent-code-ring-buffer
 -- 
 --  Version:       0.1.0 
@@ -14,14 +14,9 @@
 --  -----------------------------------------------------------------
 --
 
--- Stop the session
-ALTER EVENT SESSION [error_trap_xel]
-    ON DATABASE
-    STATE = STOP;
-GO
+-- follow the steps in 04.DisableRingBufferAndXEvent.sql first
 
--- Remove the ring buffer to free those resources
-ALTER EVENT SESSION [error_trap_xel]
-    ON DATABASE
-    DROP TARGET package0.ring_buffer;
+-- drop the event (if required)
+DROP EVENT SESSION [error_trap_xel]
+    ON DATABASE;
 GO

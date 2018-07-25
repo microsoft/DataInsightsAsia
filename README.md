@@ -8,6 +8,11 @@ All code is provided "as is" as per the [MIT License](https://github.com/Microso
 
 This project uses [SemVer](http://semver.org/) for versioning. While the following is an overview of the offical releases, for the detailed changes, see the [tags on this repository](https://github.com/Microsoft/DataInsightsAsia/tags).
 
+### Unreleased
+
+- Added
+  - /AzureSQL/XEvents_ErrorTrap
+
 ### 0.5.0
 
 - Added
